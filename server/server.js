@@ -45,8 +45,12 @@ io.on("connection", (socket) => {
 
 // Middleware setup
 app.use(express.json({ limit: "4mb" }));
-app.use(cors());
-
+app.use(
+    cors({
+        origin: "https://YOUR-NETLIFY-SITE.netlify.app",
+        credentials: true,
+    })
+);
 // Test route
 app.use("/api/status", (req, res) => {
     res.send("Server is live");
