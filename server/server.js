@@ -47,7 +47,9 @@ io.on("connection", (socket) => {
 app.use(express.json({ limit: "4mb" }));
 app.use(
     cors({
-        origin: "https://YOUR-NETLIFY-SITE.netlify.app",
+        origin:[ "http://localhost:5173",
+
+        "https://chat-app-eight-tau-61.vercel.app"],
         credentials: true,
     })
 );
